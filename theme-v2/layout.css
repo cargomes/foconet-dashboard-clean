@@ -1,0 +1,187 @@
+/* ---------------------------------------------------------------
+  Layout.css = estrutura da p�gina
+------------------------------------------------------------------ */
+/*body {
+    margin: 0;
+    background-color: var(--pe-body-bg);
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    color: var(--pe-body-color);
+}*/
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-muted);
+    overflow-x: hidden;
+}
+
+
+.app-wrapper {
+    /*margin-inline-start: var(--bs-app-sidebar-width);*/
+    /*margin-block-start: var(--pe-app-header-height);*/
+    transition: all .2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    min-height: calc(100vh - (var(--pe-app-header-height) + var(--pe-app-footer-height)));
+    padding: 0 10px;
+}
+
+.title-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0;
+    padding: 10px 0 40px 0;
+}
+
+    .title-page h4 {
+        font-size: 18px;
+        margin-bottom: 0px;
+        font-family: var(--font-base);
+        font-weight: 600;
+        line-height: 1.2;
+        color: var( --pe-body-color);
+    }
+    /* ====================================
+ * 2. LAYOUT (Structure & Grid)
+ * ==================================== */
+
+
+/* --- SIDEBAR DESKTOP --- */
+.sidebar-desktop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    background: #ffffff;
+    border-right: 1px solid var(--border-color);
+    transition: width 0.3s var(--ease-smooth);
+    z-index: 1040;
+    display: none;
+    flex-direction: column;
+}
+
+@media (min-width: 992px) {
+    .sidebar-desktop {
+        display: flex;
+    }
+}
+
+.sidebar-desktop.collapsed {
+    width: var(--sidebar-collapsed);
+}
+
+/* Sidebar Header & Brand */
+.sidebar-header {
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    padding: 0 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    flex-shrink: 0;
+    overflow: hidden;
+    transition: all 0.3s var(--ease-smooth);
+}
+
+.sidebar-desktop.collapsed .sidebar-header {
+    padding: 0;
+    justify-content: center;
+}
+
+.brand-wrapper {
+    display: block;
+    height: 40px;
+    width: 195px;
+    overflow: hidden;
+    transition: width 0.3s var(--ease-smooth);
+    position: relative;
+}
+
+.brand-img {
+    height: 100%;
+    width: auto;
+    max-width: none;
+    display: block;
+}
+
+.sidebar-desktop.collapsed .brand-wrapper {
+    width: 10px; /* Mostra apenas o ícone */
+}
+
+/* Sidebar Content Area */
+.sidebar-content {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 1rem 0.75rem;
+}
+
+/* --- MAIN CONTENT & PUSH LOGIC --- */
+.main-content {
+    margin-left: var(--sidebar-width);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: margin-left 0.3s var(--ease-smooth);
+}
+
+.sidebar-desktop.collapsed ~ .main-content {
+    margin-left: var(--sidebar-collapsed);
+}
+
+@media (max-width: 991px) {
+    .main-content {
+        margin-left: 0;
+    }
+}
+
+/* --- TOP HEADER --- */
+.top-header {
+    height: var(--header-height);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+/* --- FOOTER --- */
+.app-footer {
+    transition: margin-left 0.3s var(--ease-smooth);
+    margin-top: auto;
+    padding: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    background: white;
+}
+
+.sidebar-desktop.collapsed ~ .app-footer {
+    margin-left: var(--sidebar-collapsed);
+}
+
+@media (max-width: 991px) {
+    .sidebar-mobile {
+        width: 260px !important;
+    }
+
+    .app-footer {
+        margin-left: 0;
+    }
+
+    .mobile-logo-container {
+        height: 40px;
+        overflow: hidden;
+    }
+
+    .mobile-logo-img {
+        height: 100%;
+        width: auto;
+        max-width: none;
+    }
+}

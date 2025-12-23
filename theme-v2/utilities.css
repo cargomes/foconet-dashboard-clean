@@ -1,0 +1,73 @@
+
+/* ---------------------------------------------------------------
+   classes micro - (utilit�rios prontos, classes auxiliares)
+------------------------------------------------------------------ */
+
+/* TEXT */
+.text-muted {
+    color: var(--pe-text-muted) !important;
+}
+
+.text-primary {
+    color: var(--pe-primary) !important;
+}
+
+/* SPACING EXTRA */
+.mt-6 {
+    margin-top: 3rem !important;
+}
+
+.mb-6 {
+    margin-bottom: 3rem !important;
+}
+
+.pt-6 {
+    padding-top: 3rem !important;
+}
+
+/* SHADOWS */
+.shadow-sm {
+    box-shadow: var(--pe-shadow-sm) !important;
+}
+
+.shadow {
+    box-shadow: var(--pe-shadow) !important;
+}
+
+.shadow-lg {
+    box-shadow: var(--pe-shadow-lg) !important;
+}
+
+/* RADIUS */
+.rounded-sm {
+    border-radius: var(--pe-radius-sm) !important;
+}
+
+.rounded {
+    border-radius: var(--pe-radius) !important;
+}
+
+.rounded-lg {
+    border-radius: var(--pe-radius-lg) !important;
+}
+
+/* ====================================
+ * 4. UTILITIES (Helpers)
+ * ==================================== */
+
+/* Text & Colors Helpers */
+.text-main { color: var(--text-dark) !important; }
+.bg-primary-light { background: var(--primary-light) !important; }
+
+/* Font Size Overrides */
+.h4 { font-size: 1.25rem !important; }
+
+/* Scrollbar Customization */
+.sidebar-content::-webkit-scrollbar { width: 4px; }
+.sidebar-content::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+/* Table Responsiveness Fix */
+.table-responsive .table td { white-space: normal; }

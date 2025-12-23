@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foconet Dashboard | Bootstrap 5</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <link href="theme-v2/variables.css" rel="stylesheet" />
+    <link href="theme-v2/layout.css" rel="stylesheet" />
+    <link href="theme-v2/components.css" rel="stylesheet" />
+    <link href="theme-v2/utilities.css" rel="stylesheet" />
+    <link href="theme-v2/custom_app.css" rel="stylesheet" />
+  </head>
+  <body>
+    <aside class="sidebar-desktop" id="sidebarDesktop">
+      <div class="sidebar-header">
+        <div class="brand-wrapper">
+          <img src="foconet-black.png" class="brand-img" alt="Foconet Logo" />
+        </div>
+      </div>
+      <div class="sidebar-content">
+        <nav class="nav-menu">
+          <a href="dashboard.html" class="nav-link active">
+            <i class="ri-home-line"></i>
+            <span class="link-text">Dashboard</span>
+          </a>
+
+          <a class="nav-link" data-bs-toggle="collapse" href="#subDemandas" role="button" aria-expanded="false" aria-controls="subDemandas">
+            <i class="ri-file-list-2-line"></i>
+            <span class="link-text">Demandas</span>
+            <i class="ri-arrow-down-s-line arrow-icon"></i>
+          </a>
+          <div class="collapse submenu" id="subDemandas">
+            <a href="demandas.html" class="nav-link">
+              <span class="link-text">Minhas Demandas</span>
+            </a>
+            <a href="detalhe-demanda.html" class="nav-link">
+              <span class="link-text">Detalhes Demanda</span>
+            </a>
+            <a href="demandasNew.html" class="nav-link">
+              <span class="link-text">Nova Demanda</span>
+            </a>
+            <a href="demandaStatus.html" class="nav-link">
+              <span class="link-text">Status da Demanda</span>
+            </a>
+            <a href="DemandaClassificacao.html" class="nav-link">
+              <span class="link-text">Classificação da Demanda</span>
+            </a>
+            <a href="DemandaClassificacaoNew.html" class="nav-link">
+              <span class="link-text">Nova Classificação</span>
+            </a>
+            <a href="form-filtros.html" class="nav-link">
+              <span class="link-text">Busca Avançada</span>
+            </a>
+          </div>
+
+          <a class="nav-link" data-bs-toggle="collapse" href="#subFinanceiro" role="button" aria-expanded="false" aria-controls="subFinanceiro">
+            <i class="ri-wallet-line"></i>
+            <span class="link-text">Financeiro</span>
+            <i class="ri-arrow-down-s-line arrow-icon"></i>
+          </a>
+          <div class="collapse submenu" id="subFinanceiro">
+            <a href="#" class="nav-link">
+              <span class="link-text">Boletos</span>
+            </a>
+            <a href="#" class="nav-link">
+              <span class="link-text">Balancetes</span>
+            </a>
+          </div>
+
+          <a href="#" class="nav-link">
+            <i class="ri-book-open-line"></i>
+            <span class="link-text">Reservas</span>
+          </a>
+
+          <a href="relatorios.html" class="nav-link">
+            <i class="ri-bar-chart-box-line"></i>
+            <span class="link-text">Relatórios Gerenciais</span>
+          </a>
+
+          <a href="gerenciar-usuarios.html" class="nav-link">
+            <i class="ri-user-settings-line"></i>
+            <span class="link-text">Gerenciar Usuários</span>
+          </a>
+
+          <a href="#" class="nav-link">
+            <i class="ri-settings-4-line"></i>
+            <span class="link-text">Configurações</span>
+          </a>
+        </nav>
+      </div>
+    </aside>
+
+    <div class="sidebar-mobile offcanvas offcanvas-start bg-white" tabindex="-1" id="sidebarMobile" aria-labelledby="sidebarMobileLabel">
+      <div class="offcanvas-header border-bottom">
+        <div class="mobile-logo-container">
+          <img src="foconet-black.png" class="mobile-logo-img" alt="Foconet" />
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body p-3">
+        <nav class="nav-menu">
+          <span class="nav-label">Principal</span>
+
+          <a href="dashboard.html" class="nav-link active" data-bs-dismiss="offcanvas">
+            <i class="ri-home-line"></i>
+            <span class="link-text">Dashboard</span>
+          </a>
+
+          <a class="nav-link" data-bs-toggle="collapse" href="#subDemandasMobile" role="button" aria-expanded="false" aria-controls="subDemandasMobile">
+            <i class="ri-file-list-2-line"></i>
+            <span class="link-text">Demandas</span>
+            <i class="ri-arrow-down-s-line arrow-icon"></i>
+          </a>
+          <div class="collapse submenu" id="subDemandasMobile">
+            <a href="grid-registros.html" class="nav-link" data-bs-dismiss="offcanvas">
+              <span class="link-text">Minhas Demandas</span>
+            </a>
+            <a href="form-cadastro.html" class="nav-link" data-bs-dismiss="offcanvas">
+              <span class="link-text">Nova Solicitação</span>
+            </a>
+          </div>
+
+          <a class="nav-link" data-bs-toggle="collapse" href="#subFinanceiroMobile" role="button" aria-expanded="false" aria-controls="subFinanceiroMobile">
+            <i class="ri-wallet-line"></i>
+            <span class="link-text">Financeiro</span>
+            <i class="ri-arrow-down-s-line arrow-icon"></i>
+          </a>
+          <div class="collapse submenu" id="subFinanceiroMobile">
+            <a href="#" class="nav-link" data-bs-dismiss="offcanvas">
+              <span class="link-text">Boletos</span>
+            </a>
+            <a href="#" class="nav-link" data-bs-dismiss="offcanvas">
+              <span class="link-text">Balancetes</span>
+            </a>
+          </div>
+
+          <a href="#" class="nav-link" data-bs-dismiss="offcanvas">
+            <i class="ri-book-open-line"></i>
+            <span class="link-text">Reservas</span>
+          </a>
+
+          <span class="nav-label">Apoio</span>
+          <a href="#" class="nav-link" data-bs-dismiss="offcanvas">
+            <i class="ri-settings-4-line"></i>
+            <span class="link-text">Configurações</span>
+          </a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <header class="top-header d-flex align-items-center px-4">
+        <div class="d-flex align-items-center gap-3 w-100">
+          <button class="btn btn-icon btn-light d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMobile" aria-controls="sidebarMobile">
+            <i class="ri-menu-2-line fs-5"></i>
+          </button>
+
+          <button class="btn btn-icon btn-light me-3 d-none d-lg-block" id="sidebarToggle" aria-label="Toggle sidebar">
+            <i class="ri-menu-fold-line fs-5"></i>
+          </button>
+
+          <div class="search-wrapper d-none d-md-flex align-items-center gap-2">
+            <i class="ri-search-line text-muted"></i>
+            <input type="text" placeholder="Buscar serviço" id="searchInput" />
+          </div>
+
+          <div class="ms-auto d-flex align-items-center gap-3">
+            <div class="dropdown">
+              <button class="btn btn-light position-relative" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="ri-notification-3-line fs-5"></i>
+                <span class="position-absolute top-0 start-75 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end shadow border-0 p-2 rounded-3" style="min-width: 280px">
+                <li class="dropdown-header fw-bold text-main">Notificações (3)</li>
+                <li><a class="dropdown-item rounded-2" href="#">Novo boleto disponível</a></li>
+                <li><a class="dropdown-item rounded-2" href="#">Manutenção finalizada</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item rounded-2 text-primary fw-semibold" href="#">Ver todas</a></li>
+              </ul>
+            </div>
+
+            <div class="dropdown">
+              <div class="d-flex align-items-center gap-2" data-bs-toggle="dropdown" style="cursor: pointer" aria-expanded="false">
+                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 38px; height: 38px">AG</div>
+                <div class="d-none d-sm-block text-end">
+                  <div class="fw-bold text-main small">André Gomes</div>
+                  <div class="text-muted" style="font-size: 0.75rem">Gerente</div>
+                </div>
+              </div>
+              <ul class="dropdown-menu dropdown-menu-end shadow border-0 p-2 rounded-3">
+                <li>
+                  <a class="dropdown-item rounded-2" href="#">
+                    <i class="ri-user-line me-2"></i>
+                    Perfil
+                  </a>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item rounded-2 text-danger" href="#" id="logoutLinkHeader">
+                    <i class="ri-logout-box-r-line me-2"></i>
+                    Sair
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="p-4">
+        <div class="container-fluid">
+          <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4 gap-3">
+            <div>
+              <h1 class="h4 fw-bold text-main mb-1">Demandas</h1>
+              <p class="text-muted mb-0" style="display: none">Utilize os filtros</p>
+            </div>
+            <div class="d-flex gap-2">
+              <button type="submit" class="btn btn-primary">
+                <i class="ri-search-line me-1"></i>
+                Pesquisar
+              </button>
+
+              <a href="demandasnew.html" class="btn btn-primary" title="Abrir formulário de nova demanda">
+                <i class="ri-add-line me-1"></i>
+                Novo
+              </a>
+              <button type="button" class="btn btn-secondary" title="Exportar resultados para Excel">
+                <i class="ri-file-excel-line me-1"></i>
+                Exportar Excel
+              </button>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-12">
+              <div class="card border-0 shadow-sm rounded-3">
+                <div class="card-body p-4">
+                  <form action="/Asp/Demanda" id="formFiltros" method="get">
+                    <div class="row g-4">
+                      <div class="col-12 col-md-6 col-lg-4">
+                        <label class="form-label small fw-semibold">Nº da demanda</label>
+                        <input class="form-control" id="DemandaId" type="text" placeholder="Ex: 12345" />
+                      </div>
+
+                      <div class="col-12 col-md-6 col-lg-4">
+                        <label class="form-label small fw-semibold">Empreendimento</label>
+                        <div class="input-group">
+                          <input class="form-control" id="EmpresaRazao" type="text" placeholder="Digite o nome ou clique na lupa" />
+                          <button type="button" class="btn btn-secondary" title="Selecionar empreendimento">
+                            <i class="ri-search-line"></i>
+                          </button>
+                        </div>
+                      </div>
+
+                      <div class="col-12 col-md-6 col-lg-4">
+                        <label class="form-label small fw-semibold">Solicitante (Empresa)</label>
+                        <input class="form-control" id="EntidadeSolicitanteNome" type="text" placeholder="Ex: Foconet S.A." />
+                      </div>
+
+                      <div class="col-12 col-md-6 col-lg-4">
+                        <label class="form-label small fw-semibold">Classificação</label>
+                        <select class="form-select" id="ClassificacaoId">
+                          <option value="">Todas</option>
+                          <option value="0">Classificação 1</option>
+                          <option value="1">Classificação 2</option>
+                          <option value="2">Classificação 3</option>
+                          <option value="3">Classificação 4</option>
+                          <option value="4">Classificação 5</option>
+                        </select>
+                      </div>
+
+                      <div class="col-12 col-md-6 col-lg-4">
+                        <label class="form-label small fw-semibold">Status</label>
+                        <select class="form-select" id="StatusId">
+                          <option value="TodosExcetoFinalizados" selected="">Todos (exceto finalizados)</option>
+                          <option value="AcaoImediata">Aguardando Ação Imediata</option>
+                          <option value="AnaliseDaCausa">Aguardando Análise da Causa</option>
+                          <option value="EliminacaoDaCausaConclusao">Aguardando Conclusão das Ações</option>
+                          <option value="AvaliacaoDeEficacia">Aguardando Avaliação de Eficácia</option>
+                          <option value="Finalizado">Finalizado</option>
+                        </select>
+                      </div>
+
+                      <div class="col-12 col-md-6 col-lg-4">
+                        <label class="form-label small fw-semibold">Responsável (Ação Imediata)</label>
+                        <div class="input-group">
+                          <input class="form-control" id="UsuarioResponsavelNome" type="text" placeholder="Nome do responsável" />
+                          <button type="button" class="btn btn-secondary" title="Selecionar usuário responsável">
+                            <i class="ri-search-line"></i>
+                          </button>
+                        </div>
+                      </div>
+
+                      <div class="col-12 col-md-6 col-lg-4">
+                        <label class="form-label small fw-semibold">Cliente ID</label>
+                        <input class="form-control" id="IdCliente" type="text" placeholder="Ex: 100" />
+                      </div>
+
+                      <div class="col-12 col-md-6 col-lg-4">
+                        <label class="form-label small fw-semibold">Solicitante (Pessoa)</label>
+                        <input class="form-control" id="UsuarioSolicitanteNome" type="text" placeholder="Nome do contato" />
+                      </div>
+
+                      <div class="col-12 col-md-6 col-lg-4">
+                        <label class="form-label small fw-semibold">Causa</label>
+                        <select class="form-select" id="CausaId">
+                          <option value="">Todas</option>
+                          <option value="1">Falha Humana</option>
+                          <option value="2">Defeito de Material</option>
+                          <option value="3">Processo Inexistente/Falho</option>
+                          <option value="4">Reclamação de Terceiros</option>
+                        </select>
+                      </div>
+
+                      <div class="col-12 col-md-6 col-lg-4">
+                        <label class="form-label small fw-semibold">Possui Certificado ISO?</label>
+                        <div class="d-flex gap-4 mt-2">
+                          <div class="form-check form-check-inline">
+                            <input checked="" class="form-check-input" type="radio" name="CertificadoISO" value="" />
+                            <label class="form-check-label small fw-normal">Todos</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="CertificadoISO" value="true" />
+                            <label class="form-check-label small fw-normal">Sim</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="CertificadoISO" value="false" />
+                            <label class="form-check-label small fw-normal">Não</label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-12 col-md-6 col-lg-4">
+                        <label class="form-label small fw-semibold">Datas de Referência</label>
+                        <div class="input-group">
+                          <input class="form-control" id="datInicial" placeholder="Data inicial" type="text" />
+                          <span class="input-group-text">até</span>
+                          <input class="form-control" id="datFinal" placeholder="Data final" type="text" />
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6 col-lg-4">
+                        <label class="form-label small fw-semibold mb-1">Tipo de Período</label>
+
+                        <div class="d-flex flex-wrap gap-1 mt-2">
+                          <div class="form-check form-check-inline me-1">
+                            <input checked="" class="form-check-input" type="radio" name="TipoDeData" value="1" id="data-inclusao" />
+                            <label class="form-check-label small fw-normal" for="data-inclusao">Inclusão</label>
+                          </div>
+                          <div class="form-check form-check-inline me-1">
+                            <input class="form-check-input" type="radio" name="TipoDeData" value="2" id="data-eliminacao" />
+                            <label class="form-check-label small fw-normal" for="data-eliminacao">Elim. Causa</label>
+                          </div>
+                          <div class="form-check form-check-inline me-1">
+                            <input class="form-check-input" type="radio" name="TipoDeData" value="3" id="data-avaliacao" />
+                            <label class="form-check-label small fw-normal" for="data-avaliacao">Aval. de Eficácia</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-4 mt-4">
+            <div class="col-12">
+              <div class="card border-0 shadow-sm rounded-3">
+                <div class="card-body p-4">
+                  <div class="d-flex justify-content-start align-items-center mb-3">
+                    <div class="dt-buttons btn-group flex-wrap">
+                      <button class="btn btn-secondary buttons-pdf btn-primary" type="button">
+                        <span>
+                          <i class="ri-file-pdf-2-line me-1"></i>
+                          PDF
+                        </span>
+                      </button>
+                      <button class="btn btn-secondary buttons-print btn-primary" type="button">
+                        <span>
+                          <i class="ri-printer-line me-1"></i>
+                          Imprimir
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="table-responsive">
+                    <table id="demandasTable" class="table table-striped table-hover align-middle w-100">
+                      <thead class="table-primary">
+                        <tr>
+                          <th>#</th>
+                          <th>Fup</th>
+                          <th>Id</th>
+                          <th>Empreend.</th>
+                          <th>Solicit. (Pessoa)</th>
+                          <th>Solicit. (Empresa)</th>
+                          <th>Data Incl.</th>
+                          <th>Status</th>
+                          <th>Descrição</th>
+                          <th>Classif.</th>
+                          <th>Respons.</th>
+                          <th>Data Lim.</th>
+                          <th>Eficaz?</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="odd">
+                          <td class="text-center">
+                            <a href="#" class="text-primary me-2" title="Abrir Detalhes">
+                              <i class="ri-arrow-right-s-line fs-5"></i>
+                            </a>
+                          </td>
+                          <td class="text-center">
+                            <a href="#" class="text-success me-1" title="Cadastrar Follow Up">
+                              <i class="ri-add-circle-line fs-5"></i>
+                            </a>
+                          </td>
+                          <td>0050</td>
+                          <td>Condomínio Plaza</td>
+                          <td>Carlos Silva</td>
+                          <td>Modelo Portal</td>
+                          <td class="text-center">19/11/2025</td>
+                          <td>
+                            <span class="status-dot bg-warning me-1"></span>
+                            Análise da Causa
+                          </td>
+                          <td data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Falha na catraca do acesso de serviço.">Falha na catraca do acesso de serviço.</td>
+                          <td>Manutenção Predial</td>
+                          <td>João Dantas</td>
+                          <td class="text-center">29/11/2025</td>
+                          <td class="text-center">-</td>
+                        </tr>
+                        <tr class="even">
+                          <td class="text-center">
+                            <a href="#" class="text-primary me-2" title="Abrir Detalhes">
+                              <i class="ri-arrow-right-s-line fs-5"></i>
+                            </a>
+                          </td>
+                          <td class="text-center">
+                            <a href="#" class="text-info me-1" title="Ver Follow Up">
+                              <i class="ri-eye-line fs-5"></i>
+                            </a>
+                          </td>
+                          <td>0048</td>
+                          <td>Edifício Harmony</td>
+                          <td>Ana Paula</td>
+                          <td>Administradora Central</td>
+                          <td class="text-center">15/10/2025</td>
+                          <td>
+                            <span class="status-dot bg-success me-1"></span>
+                            Finalizado
+                          </td>
+                          <td data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Dúvida sobre a emissão do boleto de Outubro.">Dúvida sobre a emissão do boleto de Outubro.</td>
+                          <td>Financeiro - Cobrança</td>
+                          <td>Mariana Costa</td>
+                          <td class="text-center">20/10/2025</td>
+                          <td class="text-center">Sim</td>
+                        </tr>
+                        <tr class="odd">
+                          <td class="text-center">
+                            <a href="#" class="text-primary me-2" title="Abrir Detalhes">
+                              <i class="ri-arrow-right-s-line fs-5"></i>
+                            </a>
+                          </td>
+                          <td class="text-center">
+                            <a href="#" class="text-success me-1" title="Cadastrar Follow Up">
+                              <i class="ri-add-circle-line fs-5"></i>
+                            </a>
+                          </td>
+                          <td>0052</td>
+                          <td>Sede Foconet</td>
+                          <td>Thiago Soares</td>
+                          <td>Foconet</td>
+                          <td class="text-center">01/12/2025</td>
+                          <td>
+                            <span class="status-dot bg-danger me-1"></span>
+                            Aguardando Conclusão
+                          </td>
+                          <td data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Erro no filtro de relatório gerencial.">Erro no filtro de relatório gerencial.</td>
+                          <td>TI - Sistema</td>
+                          <td>Equipe Dev</td>
+                          <td class="text-center">10/12/2025</td>
+                          <td class="text-center">-</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="modalNovaDemanda" tabindex="-1" aria-labelledby="exampleModalFullscreenLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalFullscreenLabel">Nova Demanda</h5>
+                <button type="button" class="btn-close icon-btn-sm" data-bs-dismiss="modal" aria-label="Close">
+                  <i class="ri-close-large-line fw-semibold"></i>
+                </button>
+              </div>
+              <div class="modal-body">
+                <iframe id="iframeDemanda" style="width: 100%; height: 70vh; border: none; border-radius: 0 0 0.375rem 0.375rem" src="about:blank"></iframe>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="app-footer d-flex flex-column flex-sm-row justify-content-between align-items-center text-muted small gap-2">
+        <span>© 2026 Foconet. Todos os direitos reservados.</span>
+        <div class="d-flex gap-3">
+          <a href="#" class="text-decoration-none text-muted">Suporte</a>
+          <a href="#" class="text-decoration-none text-muted">Termos</a>
+          <a href="#" class="text-decoration-none text-muted">Privacidade</a>
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="theme-v2/dashboard.js"></script>
+  </body>
+</html>

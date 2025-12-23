@@ -1,0 +1,45 @@
+
+      :root {
+        --primary-dark: #2563eb;
+        --text-main: #1e293b;
+        --bg-body: #f8fafc;
+        --border-color: #e2e8f0;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg-body);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+      }
+      .login-card {
+        max-width: 420px;
+        width: 100%;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        border: 1px solid var(--border-color);
+        background: white;
+      }
+
+      .brand-icon {
+        width: 180px; 
+        height: auto; 
+        background: none; 
+        color: inherit; 
+        border-radius: 0; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem; /
+        padding: 0; 
+      }
+
+      .logo-img {
+        max-width: 100%; 
+        height: auto;
+        display: block;
+      }
+    

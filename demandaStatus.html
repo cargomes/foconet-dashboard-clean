@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foconet Dashboard | Bootstrap 5</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <link href="theme-v2/variables.css" rel="stylesheet" />
+    <link href="theme-v2/layout.css" rel="stylesheet" />
+    <link href="theme-v2/components.css" rel="stylesheet" />
+    <link href="theme-v2/utilities.css" rel="stylesheet" />
+    <link href="theme-v2/custom_app.css" rel="stylesheet" />
+  </head>
+  <body>
+    <aside class="sidebar-desktop" id="sidebarDesktop">
+      <div class="sidebar-header">
+        <div class="brand-wrapper">
+          <img src="foconet-black.png" class="brand-img" alt="Foconet Logo" />
+        </div>
+      </div>
+      <div class="sidebar-content">
+        <nav class="nav-menu">
+          <a href="dashboard.html" class="nav-link active">
+            <i class="ri-home-line"></i>
+            <span class="link-text">Dashboard</span>
+          </a>
+
+          <a class="nav-link" data-bs-toggle="collapse" href="#subDemandas" role="button" aria-expanded="false" aria-controls="subDemandas">
+            <i class="ri-file-list-2-line"></i>
+            <span class="link-text">Demandas</span>
+            <i class="ri-arrow-down-s-line arrow-icon"></i>
+          </a>
+          <div class="collapse submenu" id="subDemandas">
+            <a href="demandas.html" class="nav-link">
+              <span class="link-text">Minhas Demandas</span>
+            </a>
+            <a href="detalhe-demanda.html" class="nav-link">
+              <span class="link-text">Detalhes Demanda</span>
+            </a>
+            <a href="demandasNew.html" class="nav-link">
+              <span class="link-text">Nova Demanda</span>
+            </a>
+            <a href="demandaStatus.html" class="nav-link">
+              <span class="link-text">Status da Demanda</span>
+            </a>
+            <a href="DemandaClassificacao.html" class="nav-link">
+              <span class="link-text">Classificação da Demanda</span>
+            </a>
+            <a href="DemandaClassificacaoNew.html" class="nav-link">
+              <span class="link-text">Nova Classificação</span>
+            </a>
+            <a href="form-filtros.html" class="nav-link">
+              <span class="link-text">Busca Avançada</span>
+            </a>
+          </div>
+
+          <a class="nav-link" data-bs-toggle="collapse" href="#subFinanceiro" role="button" aria-expanded="false" aria-controls="subFinanceiro">
+            <i class="ri-wallet-line"></i>
+            <span class="link-text">Financeiro</span>
+            <i class="ri-arrow-down-s-line arrow-icon"></i>
+          </a>
+          <div class="collapse submenu" id="subFinanceiro">
+            <a href="#" class="nav-link">
+              <span class="link-text">Boletos</span>
+            </a>
+            <a href="#" class="nav-link">
+              <span class="link-text">Balancetes</span>
+            </a>
+          </div>
+
+          <a href="#" class="nav-link">
+            <i class="ri-book-open-line"></i>
+            <span class="link-text">Reservas</span>
+          </a>
+
+          <a href="relatorios.html" class="nav-link">
+            <i class="ri-bar-chart-box-line"></i>
+            <span class="link-text">Relatórios Gerenciais</span>
+          </a>
+
+          <a href="gerenciar-usuarios.html" class="nav-link">
+            <i class="ri-user-settings-line"></i>
+            <span class="link-text">Gerenciar Usuários</span>
+          </a>
+
+          <a href="#" class="nav-link">
+            <i class="ri-settings-4-line"></i>
+            <span class="link-text">Configurações</span>
+          </a>
+        </nav>
+      </div>
+    </aside>
+
+    <div class="sidebar-mobile offcanvas offcanvas-start bg-white" tabindex="-1" id="sidebarMobile" aria-labelledby="sidebarMobileLabel">
+      <div class="offcanvas-header border-bottom">
+        <div class="mobile-logo-container">
+          <img src="foconet-black.png" class="mobile-logo-img" alt="Foconet" />
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body p-3">
+        <nav class="nav-menu">
+          <span class="nav-label">Principal</span>
+
+          <a href="dashboard.html" class="nav-link active" data-bs-dismiss="offcanvas">
+            <i class="ri-home-line"></i>
+            <span class="link-text">Dashboard</span>
+          </a>
+
+          <a class="nav-link" data-bs-toggle="collapse" href="#subDemandasMobile" role="button" aria-expanded="false" aria-controls="subDemandasMobile">
+            <i class="ri-file-list-2-line"></i>
+            <span class="link-text">Demandas</span>
+            <i class="ri-arrow-down-s-line arrow-icon"></i>
+          </a>
+          <div class="collapse submenu" id="subDemandasMobile">
+            <a href="grid-registros.html" class="nav-link" data-bs-dismiss="offcanvas">
+              <span class="link-text">Minhas Demandas</span>
+            </a>
+            <a href="form-cadastro.html" class="nav-link" data-bs-dismiss="offcanvas">
+              <span class="link-text">Nova Solicitação</span>
+            </a>
+          </div>
+
+          <a class="nav-link" data-bs-toggle="collapse" href="#subFinanceiroMobile" role="button" aria-expanded="false" aria-controls="subFinanceiroMobile">
+            <i class="ri-wallet-line"></i>
+            <span class="link-text">Financeiro</span>
+            <i class="ri-arrow-down-s-line arrow-icon"></i>
+          </a>
+          <div class="collapse submenu" id="subFinanceiroMobile">
+            <a href="#" class="nav-link" data-bs-dismiss="offcanvas">
+              <span class="link-text">Boletos</span>
+            </a>
+            <a href="#" class="nav-link" data-bs-dismiss="offcanvas">
+              <span class="link-text">Balancetes</span>
+            </a>
+          </div>
+
+          <a href="#" class="nav-link" data-bs-dismiss="offcanvas">
+            <i class="ri-book-open-line"></i>
+            <span class="link-text">Reservas</span>
+          </a>
+
+          <span class="nav-label">Apoio</span>
+          <a href="#" class="nav-link" data-bs-dismiss="offcanvas">
+            <i class="ri-settings-4-line"></i>
+            <span class="link-text">Configurações</span>
+          </a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <header class="top-header d-flex align-items-center px-4">
+        <div class="d-flex align-items-center gap-3 w-100">
+          <button class="btn btn-icon btn-light d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMobile" aria-controls="sidebarMobile">
+            <i class="ri-menu-2-line fs-5"></i>
+          </button>
+
+          <button class="btn btn-icon btn-light me-3 d-none d-lg-block" id="sidebarToggle" aria-label="Toggle sidebar">
+            <i class="ri-menu-fold-line fs-5"></i>
+          </button>
+
+          <div class="search-wrapper d-none d-md-flex align-items-center gap-2">
+            <i class="ri-search-line text-muted"></i>
+            <input type="text" placeholder="Buscar serviço" id="searchInput" />
+          </div>
+
+          <div class="ms-auto d-flex align-items-center gap-3">
+            <div class="dropdown">
+              <button class="btn btn-light position-relative" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="ri-notification-3-line fs-5"></i>
+                <span class="position-absolute top-0 start-75 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end shadow border-0 p-2 rounded-3" style="min-width: 280px">
+                <li class="dropdown-header fw-bold text-main">Notificações (3)</li>
+                <li><a class="dropdown-item rounded-2" href="#">Novo boleto disponível</a></li>
+                <li><a class="dropdown-item rounded-2" href="#">Manutenção finalizada</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item rounded-2 text-primary fw-semibold" href="#">Ver todas</a></li>
+              </ul>
+            </div>
+
+            <div class="dropdown">
+              <div class="d-flex align-items-center gap-2" data-bs-toggle="dropdown" style="cursor: pointer" aria-expanded="false">
+                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 38px; height: 38px">AG</div>
+                <div class="d-none d-sm-block text-end">
+                  <div class="fw-bold text-main small">André Gomes</div>
+                  <div class="text-muted" style="font-size: 0.75rem">Gerente</div>
+                </div>
+              </div>
+              <ul class="dropdown-menu dropdown-menu-end shadow border-0 p-2 rounded-3">
+                <li>
+                  <a class="dropdown-item rounded-2" href="#">
+                    <i class="ri-user-line me-2"></i>
+                    Perfil
+                  </a>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item rounded-2 text-danger" href="#" id="logoutLinkHeader">
+                    <i class="ri-logout-box-r-line me-2"></i>
+                    Sair
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="p-4">
+        <main class="app-wrapper-teste" style="padding: 10px !important">
+          <div class="container-fluid">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4 gap-3">
+              <div>
+                <h1 class="h4 fw-bold text-main mb-1">Demandas</h1>
+                <p class="text-muted mb-0" style="display: none">Utilize os filtros</p>
+              </div>
+              <div class="d-flex gap-2">
+                <button type="button" class="btn btn-secondary" onclick="history.back();">
+                  <i class="ri-arrow-left-line me-1"></i>
+                  Voltar
+                </button>
+              </div>
+            </div>
+
+            <form action="/gmpsa/Asp/Demanda" id="formUpdateDemanda" method="post">
+              <div class="card border-0 shadow-sm mb-5">
+                <div class="card-header card-header-clean pt-4 px-4">
+                  <h5 class="card-title text-primary mb-0">Progresso da Demanda (Status)</h5>
+                </div>
+                <div class="card-body py-5 px-3 px-md-5">
+                  <ul class="stepper-minimal">
+                    <li class="stepper-item completed">
+                      <div class="stepper-marker"><i class="ri-check-line"></i></div>
+                      <span class="stepper-label">Dados gerais</span>
+                    </li>
+
+                    <li class="stepper-item completed">
+                      <div class="stepper-marker"><i class="ri-check-line"></i></div>
+                      <span class="stepper-label">Ação imediata</span>
+                    </li>
+
+                    <li class="stepper-item completed">
+                      <div class="stepper-marker"><i class="ri-check-line"></i></div>
+                      <span class="stepper-label">Análise da causa</span>
+                    </li>
+
+                    <li class="stepper-item completed">
+                      <div class="stepper-marker"><i class="ri-check-line"></i></div>
+                      <span class="stepper-label">Planejamento</span>
+                    </li>
+
+                    <li class="stepper-item active">
+                      <div class="stepper-marker"></div>
+                      <span class="stepper-label">Ações p/ eliminação</span>
+                    </li>
+
+                    <li class="stepper-item">
+                      <div class="stepper-marker"></div>
+                      <span class="stepper-label">Eficácia</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="row pt-1">
+                <div class="col-12 col-xl-6 mb-4">
+                  <div class="card h-100 border-0 shadow-sm rounded-3">
+                    <div class="card-header card-header-clean pt-4 px-4">
+                      <h5 class="card-title mb-0 text-primary">Dados gerais</h5>
+                    </div>
+                    <div class="card-body p-4 pt-2">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <span class="text-main fw-semibold small">Empreendimento</span>
+                            <p class="text-muted small mb-1">Modelo Portal</p>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <span class="text-main fw-semibold small">Solicitante (pessoa)</span>
+                            <p class="text-muted small mb-1">Carlos</p>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <span class="text-main fw-semibold small">Solicitante (empresa)</span>
+                            <p class="text-muted small mb-1">Foconet</p>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <span class="text-main fw-semibold small">Classificação</span>
+                            <p class="text-muted small mb-1">Classif. Alta</p>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <span class="text-main fw-semibold small">Cliente id</span>
+                            <p class="text-muted small mb-1">#2101</p>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <span class="text-main fw-semibold small">Descrição</span>
+                            <p class="text-muted small mb-1">Identificamos um vazamento constante na pia da cozinha.</p>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <span class="text-main fw-semibold small">Possui Certificado ISO?</span>
+                            <p class="text-muted small mb-1">Não</p>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <p class="form-label-small"></p>
+                            <span class="text-main fw-semibold small">Status</span>
+                            <p class="text-muted small mb-1">Aguardando conclusão das ações para eliminação da causa</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-xl-6 mb-4">
+                  <div class="card h-100 border-0 shadow-sm rounded-3">
+                    <div class="card-header card-header-clean pt-4 px-4">
+                      <h5 class="card-title mb-0 text-primary">Ação imediata</h5>
+                    </div>
+                    <div class="card-body p-4 pt-2">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <span class="text-main fw-semibold small">Descrição da ação</span>
+                            <p class="text-muted small mb-1">A origem parece ser a tubulação na parede.</p>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <span class="text-main fw-semibold small">Responsável(is)</span>
+                            <p class="text-muted small mb-1">Carlos</p>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <span class="text-main fw-semibold small">Data limite</span>
+                            <p class="text-muted small mb-1">29/11/2025</p>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="mb-3">
+                            <span class="text-main fw-semibold small">Data de conclusão</span>
+                            <p class="text-muted small mb-1">28/11/2025</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-xl-6 mb-4">
+                  <div class="card h-100 border-0 shadow-sm rounded-3">
+                    <div class="card-header card-header-clean pt-4 px-4">
+                      <h5 class="card-title mb-0 text-primary">Análise da causa</h5>
+                    </div>
+                    <div class="card-body p-4 pt-2">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="mb-3">
+                            <span class="text-main fw-semibold small">Análise da causa (Descrição)</span>
+                            <p class="text-muted small mb-1">teste</p>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="mb-3">
+                            <span class="text-main fw-semibold small">Causa principal identificada</span>
+                            <p class="text-muted small mb-1">Ex demanda3</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-xl-6 mb-4">
+                  <div class="card h-100 border-0 shadow-sm rounded-3">
+                    <div class="card-header card-header-clean pt-4 px-4">
+                      <h5 class="card-title mb-0 text-primary">Ações para eliminação da causa principal (planejamento)</h5>
+                    </div>
+                    <div class="card-body p-4 pt-2">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="mb-3">
+                            <p class="form-label-small">Ações para eliminação da causa principal</p>
+                            <h6>xcxc</h6>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="mb-3">
+                            <span class="text-main fw-semibold small">Responsável pelo tratamento da causa</span>
+                            <p class="text-muted small mb-1">Foconet</p>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="mb-3">
+                            <span class="text-main fw-semibold small">Data limite da eliminação da causa</span>
+                            <p class="text-muted small mb-1">Foconet</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-xl-6 mb-4">
+                  <div class="card h-100 border-0 shadow-sm rounded-3 card-highlight-active">
+                    <div class="card-header card-header-clean pt-4 px-4">
+                      <h5 class="card-title mb-0 text-primary">Ações para eliminação da causa principal (Conclusão)</h5>
+                    </div>
+                    <div class="card-body p-4 pt-2">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="mb-3">
+                            <label for="data-eliminacao-causa" class="form-label small fw-semibold">Data da eliminação da causa</label>
+
+                            <input autocomplete="off" class="form-control" id="data-eliminacao-causa" maxlength="10" name="DataEliminacaoCausa" placeholder="Escolha uma data" type="text" value="" />
+                          </div>
+                        </div>
+
+                        <div class="col-md-12">
+                          <div class="mb-3">
+                            <p class="form-label small fw-semibold">Arquivo(s) de evidência</p>
+                            <div class="file-upload">
+                              <a href="javascript:btnUp('50', '4', 17032, 'carlos.teste')" class="btn btn-outline-primary">
+                                Fazer Upload
+                                <i class="ri-upload-2-fill"></i>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-xl-6 mb-4">
+                  <div class="card h-100 border-0 shadow-sm rounded-3">
+                    <div class="card-header card-header-clean pt-4 px-4">
+                      <h5 class="card-title mb-0 text-primary">Avaliação de eficácia</h5>
+                    </div>
+                    <div class="card-body p-4 pt-2 d-flex align-items-center">
+                      <p class="mb-0 text-muted small fw-semibold">Aguardando a conclusão da etapa de **Eliminação da Causa Principal (Conclusão)** para dar início à Avaliação de Eficácia.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-end mb-5 mt-3 gap-2">
+                <button class="btn btn-primary" data-action="gravar">Gravar</button>
+              </div>
+            </form>
+          </div>
+        </main>
+      </main>
+
+      <footer class="app-footer d-flex flex-column flex-sm-row justify-content-between align-items-center text-muted small gap-2">
+        <span>© 2026 Foconet. Todos os direitos reservados.</span>
+        <div class="d-flex gap-3">
+          <a href="#" class="text-decoration-none text-muted">Suporte</a>
+          <a href="#" class="text-decoration-none text-muted">Termos</a>
+          <a href="#" class="text-decoration-none text-muted">Privacidade</a>
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="theme-v2/dashboard.js"></script>
+  </body>
+</html>
